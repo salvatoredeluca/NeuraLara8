@@ -12,7 +12,7 @@ and then the container
 
 Then build and source
 
-# Kinematic simulation
+# Start the simulation
 Launch MoveIt!
 ```bash
 ros2 launch moveit_lara8_moveit_config dual_demo.launch.py
