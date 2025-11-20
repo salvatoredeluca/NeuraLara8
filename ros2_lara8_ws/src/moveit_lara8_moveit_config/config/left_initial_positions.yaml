@@ -1,0 +1,9 @@
+# Default initial positions for lara8's ros2_control fake system
+
+initial_positions:
+  lara8_joint1: 0.0
+  lara8_joint2: 0.0
+  lara8_joint3: 1.57
+  lara8_joint4: 0.0
+  lara8_joint5: 1.57
+  lara8_joint6: 0.0

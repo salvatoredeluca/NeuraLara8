@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="lara8">
+
+<!-- values not correct. 12/05/2022 heitmann-->
+
+<!-- Joint 1 -->
+<xacro:property name="lower_joint_limit_1" value="-3.14159" />
+<xacro:property name="upper_joint_limit_1" value="3.14159" />
+<xacro:property name="torque_limit_1" value="204" />
+<xacro:property name="joint_velocity_limit_1" value="3.14159" /> 
+
+<!-- Joint 2 -->
+<xacro:property name="lower_joint_limit_2" value="-2.3492" />
+<xacro:property name="upper_joint_limit_2" value="2.3492" />
+<xacro:property name="torque_limit_2" value="204" />
+<xacro:property name="joint_velocity_limit_2" value="2.3492" /> 
+
+<!-- Joint 3 -->
+<xacro:property name="lower_joint_limit_3" value="-2.6093" />
+<xacro:property name="upper_joint_limit_3" value="2.6093" />
+<xacro:property name="torque_limit_3" value="107" />
+<xacro:property name="joint_velocity_limit_3" value="2.6093" /> 
+
+<!-- Joint 4 -->
+<xacro:property name="lower_joint_limit_4" value="-3.14159" />
+<xacro:property name="upper_joint_limit_4" value="3.14159" />
+<xacro:property name="torque_limit_4" value="107" />
+<xacro:property name="joint_velocity_limit_4" value="3.14159" /> 
+
+<!-- Joint 5 -->
+<xacro:property name="lower_joint_limit_5" value="-3.14159" />
+<xacro:property name="upper_joint_limit_5" value="3.14159" />
+<xacro:property name="torque_limit_5" value="36" />
+<xacro:property name="joint_velocity_limit_5" value="3.14159" /> 
+
+<!-- Joint 6 -->
+<xacro:property name="lower_joint_limit_6" value="-3.14159" />
+<xacro:property name="upper_joint_limit_6" value="3.14159" />
+<xacro:property name="torque_limit_6" value="36" />
+<xacro:property name="joint_velocity_limit_6" value="3.14159" /> 
+
+
+</robot>
