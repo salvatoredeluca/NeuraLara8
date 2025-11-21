@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro"
+       name="lara8" >
+
+  <xacro:arg name="prefix" default="lara8_"/>
+  <xacro:arg name="parameter_file_name" default="lara8_kinematic_parameters_nominal"/>
+  <xacro:arg name="dynamic_parameter_file_name" default="lara8_dynamic_parameters_nominal"/>
+  <xacro:arg name="limits_file_name" default="lara8_limits"/>
+
+
+  <xacro:include filename="$(find robot_description)/lara8/urdf/lara8_macro.xacro" />
+  
+  <xacro:lara8_robot prefix="$(arg prefix)"
+                    parameter_file_name = "$(arg parameter_file_name)"
+                    dynamic_parameter_file_name =  "$(arg dynamic_parameter_file_name)"
+                    limits_file_name = "$(arg limits_file_name)" />
+
+  <link name="world" />
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "$(arg prefix)root_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+
+</robot>

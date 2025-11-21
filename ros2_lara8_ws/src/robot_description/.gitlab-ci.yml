@@ -1,0 +1,38 @@
+image: ubuntu:bionic
+stages:          # List of stages for jobs, and their order of execution
+  - test
+    
+unit-test:   # This job runs in the test stage.
+  stage: test
+  tags:
+    - control-shared
+
+  before_script:
+    - apt-get update && apt-get install -y git curl jq
+   
+  script:
+    - ls -l
+    - apt-get update
+    - "curl -X POST --fail -F token=$EBY_PROJECT_TOKEN -F ref=main https://gitlab.hrg.systems/api/v4/projects/810/trigger/pipeline"
+    - response=$(curl -X POST --fail -F token=$EBY_PROJECT_TOKEN -F ref=main https://gitlab.hrg.systems/api/v4/projects/810/trigger/pipeline)
+    - echo $response
+    - pipeline_id=$(echo $response | jq '.id')
+
+    - status="pending"
+    - |
+      while [[ $status == "pending" || $status == "running" ]]; do
+        sleep 30  # Adjust the sleep time as needed
+        pipeline_info=$(curl --header "PRIVATE-TOKEN: $EBY_ACCESS_TOKEN" "https://gitlab.hrg.systems/api/v4/projects/810/pipelines/$pipeline_id")
+        status=$(echo $pipeline_info | jq -r '.status')
+        
+        # Get the jobs and their status
+        jobs=$(curl --header "PRIVATE-TOKEN: $EBY_ACCESS_TOKEN" "https://gitlab.hrg.systems/api/v4/projects/810/pipelines/$pipeline_id/jobs")
+        echo "Pipeline status: $status"
+        echo "Jobs:"
+        # echo $jobs | jq '.[] | {name: .unit-test, status: .status, stage: .stage}'
+      done
+
+  artifacts:
+    #untracked: true
+    #paths:
+    
