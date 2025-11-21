@@ -24,7 +24,8 @@
         prefix="right_lara8_"    
         parent="world"   
         initial_positions_file="$(find moveit_lara8_moveit_config)/config/right_initial_positions.yaml"
-        use_vision="true">
+        use_vision="true"
+        not_gazebo='false'>
     <origin xyz="0 0.3 0.1" rpy="-1.57 -0.78 1.57" />
     </xacro:lara8_robot>
 
@@ -33,7 +34,8 @@
         prefix="left_lara8_"       
         use_vision="false"
         parent="world"
-        initial_positions_file="$(find moveit_lara8_moveit_config)/config/left_initial_positions.yaml">
+        initial_positions_file="$(find moveit_lara8_moveit_config)/config/left_initial_positions.yaml"
+        not_gazebo='false'>
     <origin xyz="0 -0.3 0.1" rpy="1.57 -0.78 -1.57" />
     </xacro:lara8_robot>
 
