@@ -5,7 +5,7 @@ This repository contains the simulation environment for the ROS 2 Humble dual-ar
 
 ---
 
-##Workspace setup
+## Workspace setup
 
 Create an image and then the container using `ros2_lara8_ws` as the workspace, then build and source
 
